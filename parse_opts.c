@@ -75,6 +75,10 @@ int parse_opts(int argc, char *argv[], char **filename, unsigned long *size,
     fprintf(stderr, "%s: filename is required\n", argv[0]);
     fail = 1;
   }
+  if (*date == NULL) {
+    fprintf(stderr, "%s: query date is required\n", argv[0]);
+    fail = 1;
+  }
   if (fail) {
     fprintf(stderr, "Usage: %s [-i] [-t tablesize] [-r datestring] [-d "
                     "datestring] filename\n",

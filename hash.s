@@ -33,7 +33,7 @@ hashFun:
     /////////////////////////////////////////////////////////
     
     // TODO: Write your code here to implement the hash function.
-    // For reference, the C implementation is replicated here:
+    // For reference, the C implementation is shown here:
     // hash = c + (hash << 6) + (hash << 16) - hash;
 
     /////////////////////////////////////////////////////////
