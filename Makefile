@@ -16,7 +16,7 @@ OBJS = poll_lookup.o parse_opts.o strip_date.o hash.o
 CC = gcc
 DEBUG = -g
 WARN = -Wall -Wextra
-CFLAGS = -I. -std=c11 $(DEBUG) $(WARN)
+CFLAGS = -I. -std=gnu11 $(DEBUG) $(WARN)
 LIBS = 
 
 .PHONY: clean
