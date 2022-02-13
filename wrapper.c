@@ -32,9 +32,9 @@ int __wrap_main(int argc, char **argv){
 void * __wrap_malloc(size_t c){
   void *p = __real_malloc(c);
   if (p != NULL){
-    unsigned int *t = (unsigned int *)p;
-    for (size_t i=0; i<c; i+=4){
-      *t = rand();
+    char *t = (char*)p;
+    for (size_t i=0; i<c; i++){
+      *t = (char)(rand()%256);
       t++;
     }
   }
