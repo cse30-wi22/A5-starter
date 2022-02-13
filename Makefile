@@ -12,17 +12,18 @@
 # Run make clean to clean objects
 
 EXE = poll_lookup
-OBJS = poll_lookup.o parse_opts.o strip_date.o hash.o
+OBJS = poll_lookup.o parse_opts.o strip_date.o hash.o wrapper.o
 CC = gcc
 DEBUG = -g
 WARN = -Wall -Wextra
 CFLAGS = -I. -std=gnu11 $(DEBUG) $(WARN)
+LDFLAGS = -Wl,--wrap=main,--wrap=malloc
 LIBS = 
 
 .PHONY: clean
 
 $(EXE) : $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
 
 poll_lookup.o: poll_lookup.h
 
